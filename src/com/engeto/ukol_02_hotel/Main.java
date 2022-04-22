@@ -48,6 +48,7 @@ public class Main {
 
         // kolekce objektů
         ListOfReservation seznam = new ListOfReservation(reservation1);
+        // neprida mi to dalsi rezervaci
         seznam.add(reservation2);
 
         // tady mi to vrátí pouze rezervaci 1
