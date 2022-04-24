@@ -8,14 +8,13 @@ public class Guest {
     private String firstName;
     private String lastname;
     private LocalDate birthDate;
-    private int room;
+    private Room room;
 
     // kontruktor
     public Guest(String firstName, String lastName, LocalDate birthDate, int room) {
         this.firstName = firstName;
         this.lastname = lastName;
         this.birthDate = birthDate;
-        this.room = room; // výchozí hodnota 0 ... Pokoj 0 neexistuje
     }
 
     // povinné vyplnění atributů + výchozí hodnoty
@@ -52,13 +51,6 @@ public class Guest {
         this.birthDate = birthDate;
     }
 
-    public int getRoom() {
-        return room;
-    }
-
-    public void setRoom(int room) {
-        this.room = room;
-    }
     // vlastni metoda pro ziskani popisku hosta
     public String getDescription() {
         return

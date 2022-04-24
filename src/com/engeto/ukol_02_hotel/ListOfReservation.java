@@ -11,9 +11,6 @@ public class ListOfReservation {
     public ListOfReservation(Reservation reservationItem) {
         this.reservationItem = reservationItem;
     }
-    public ListOfReservation() {
-        //this.reservationItem = "Prázdná rezervace";
-    }
 
     public void add(Reservation reservationItem){
         listOfReservation.add(reservationItem);
@@ -30,6 +27,7 @@ public class ListOfReservation {
     @Override
     public String toString() {
         return
+                "========================================" + "\n" +
                 reservationItem + "\n" +
                 "========================================";
     }

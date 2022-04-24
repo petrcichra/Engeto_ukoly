@@ -62,8 +62,7 @@ public class Reservation {
                 "Host: " + guest +"\n"+
                 "Pokoj: " + room +"\n"+
                 "Příjezd: " + checkIn +"\n"+
-                "Odjezd: " + checkOut +"\n"+
-                "----------------------------------------";
+                "Odjezd: " + checkOut;
     }
 
     public void printDescription() {
@@ -77,7 +76,6 @@ public class Reservation {
                 "Host: " + guest +"\n"+
                 "Pokoj: " + room +"\n"+
                 "Příjezd: " + checkIn +"\n"+
-                "Odjezd: " + checkOut +"\n"+
-                "----------------------------------------";
+                "Odjezd: " + checkOut;
     }
 }
