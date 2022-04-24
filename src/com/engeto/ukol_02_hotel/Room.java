@@ -89,11 +89,6 @@ public class Room {
 
     @Override
     public String toString() {
-        return
-                "Číslo pokoje: " + numOfRoom + "\n" +
-                "Počet postelí: " + numOfBed + "\n" +
-                "S balkónem: " + haveBalcony + "\n" +
-                "S výhledem na moře: " + haveSeeView + "\n" +
-                "Cena: " + priceForRoom;
+        return getDescription();
     }
 }

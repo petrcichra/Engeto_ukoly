@@ -65,9 +65,6 @@ public class Guest {
 
     @Override
     public String toString() {
-        return
-            "Celé jméno: " + firstName + " " + lastname +"\n"+
-            "Datum narozeni: " + birthDate +"\n"+
-            "Pokoj: " + room;
+        return getDescription();
     }
 }

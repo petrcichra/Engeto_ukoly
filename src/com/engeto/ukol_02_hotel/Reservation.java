@@ -71,11 +71,6 @@ public class Reservation {
 
     @Override
     public String toString() {
-        return
-                "Číslo rezervace: " + reservationId +"\n"+
-                "Host: " + guest +"\n"+
-                "Pokoj: " + room +"\n"+
-                "Příjezd: " + checkIn +"\n"+
-                "Odjezd: " + checkOut;
+        return getDescription();
     }
 }
