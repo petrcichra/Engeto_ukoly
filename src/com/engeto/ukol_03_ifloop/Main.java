@@ -1,5 +1,6 @@
 package com.engeto.ukol_03_ifloop;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Main {
@@ -31,10 +32,10 @@ public class Main {
         int input = Support.safeReadInt();
         //if (input <= 0) System.out.println("Konečně si vložil záporné číslo nebo nulu, metoda končí");
         while (input >= 0) {
-            System.out.println("Vložil si kladné číslo, pro ukončení vlož číslo <= 0");
+            System.out.println("Vložil si kladné číslo: " + input +", pro ukončení vlož číslo < 0");
             input = Support.safeReadInt();
         }
-        if (input <= 0) System.out.println("Zadal si záporné číslo nbeo nulu, metoda končí");
+        if (input <= 0) System.out.println("Zadal si záporné číslo, metoda končí");
     }
 
     /**
@@ -67,7 +68,14 @@ public class Main {
      * @return List načtených hodnot (záporná hodnota není zahrnuta v listu)
      */
     public static List<Integer> storeAllInputInArrayListUntilNegative() {
-        return null;
+        ArrayList<Integer> listOfInputs = new ArrayList<>();
+        int input = Support.safeReadInt();
+
+        while (input > 0) {
+            listOfInputs.add(input);
+            input = Support.safeReadInt();
+        }
+        return listOfInputs;
     }
 
     /**
@@ -75,6 +83,10 @@ public class Main {
      * @param list List čísel, která se mají vypsat.
      */
     public static void printAllIntegersFromList(List<Integer> list) {
+
+        for (int i = 0; i < list.size(); i++) {
+            System.out.println(list.get(i));
+        }
     }
 
     /**
@@ -83,7 +95,12 @@ public class Main {
      * @return Součet všech čísel v listu.
      */
     public static Integer sumAllIntegersFromList(List<Integer> list) {
-        return null;
+        int result = 0;
+        for (Integer i : list) {
+            result += i;
+        }
+
+        return result;
     }
     //endregion
 
@@ -94,6 +111,14 @@ public class Main {
      * @param limit Limit - vypsána budou pouze čísla z listu, která jsou menší než limit
      */
     public static void printIntegersUnderLimit(List<Integer> list, int limit) {
+        if (limit > list.size()) {
+            limit = list.size();
+        }
+        for (int i = 0; i < limit; i++) {
+            System.out.println(list.get(i));
+        }
+
+
     }
 
     /**
@@ -108,19 +133,38 @@ public class Main {
      * @param list Seznam čísel, která se mají vypsat.
      */
     public static void printIntegersWithReplace(List<Integer> list) {
+        ArrayList<String> replaceList = new ArrayList<>();
+
+        for (int i = 0; i < list.size(); i++) {
+            switch (list.get(i)) {
+                case 1:
+                    replaceList.add("One");
+                    break;
+                case 2:
+                    replaceList.add("Two");
+                    break;
+                case 3:
+                    replaceList.add("Three");
+                    break;
+                default:
+                    replaceList.add(list.get(i).toString());
+            }
+
+        }
+        System.out.println(replaceList);
     }
     //endregion
 
     public static void main(String[] args) {
         // Příklad:
-        //System.out.println("--- Example - read and print one integer ---");
-        //readOneIntFromInputAndPrintIt();
+        System.out.println("--- Example - read and print one integer ---");
+        readOneIntFromInputAndPrintIt();
         // ---
-        //System.out.println("--- Task 1 - read and print integers until negative ---");
-        //readIntsFromInputAndPrintItUntilNegative();
+        System.out.println("--- Task 1 - read and print integers until negative ---");
+        readIntsFromInputAndPrintItUntilNegative();
         // ---
-        //System.out.println("--- Task 2 - sum all integers until negative ---");
-        //System.out.println("Total sum: " + sumAllInputUntilNegative());
+        System.out.println("--- Task 2 - sum all integers until negative ---");
+        System.out.println("Total sum: " + sumAllInputUntilNegative());
         // ---
         System.out.println("--- Task 3 - read integers to list until negative ---");
         List<Integer> list = storeAllInputInArrayListUntilNegative();
