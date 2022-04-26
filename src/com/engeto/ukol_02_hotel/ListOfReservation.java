@@ -6,22 +6,26 @@ import java.util.List;
 public class ListOfReservation {
 
     private Reservation reservationItem;
-    List<Reservation> listOfReservation = new ArrayList<>();
+    ArrayList<Reservation> listOfReservation = new ArrayList<>();
 
-    public ListOfReservation(Reservation reservationItem) {
-        this.reservationItem = reservationItem;
+    public ListOfReservation() {
+//        this.reservationItem = reservationItem;
+//        this.listOfReservation = listOfReservation;
     }
 
-    public void add(Reservation reservationItem){
+    public void addRes(Reservation reservationItem) {
         listOfReservation.add(reservationItem);
     }
-
-    public void remove(Reservation reservationItem){
-        listOfReservation.add(reservationItem);
+    public void removeRes(Reservation reservationItem) {
+        listOfReservation.remove(reservationItem);
     }
 
-    public List<Reservation> getList() {
-        return new ArrayList<>(listOfReservation);
+    public void printReservation() {
+        System.out.println(
+                "========================================" + "\n" +
+                reservationItem + "\n" +
+                "========================================"
+        );
     }
 
     @Override

@@ -47,21 +47,12 @@ public class Main {
 //        reservation2.printDescription();
 
         // kolekce objektů
-        ListOfReservation seznam = new ListOfReservation(reservation1);
+        ListOfReservation allReservation = new ListOfReservation();
 
-        List seznam2 = new ArrayList();
-        seznam2.add(reservation1);
-        seznam2.add(reservation2);
+        allReservation.addRes(reservation1);
+        allReservation.addRes(reservation2);
 
-        // tady jsem chtěl aby to přidalo další
-        //seznam.add(reservation2);
-
-        // tady mi to vrátí pouze rezervaci 1
-        System.out.println(seznam2);
-
-        // tady jsem chtěl po vzoru ze cvičení na engetu, aby mi to vrátilo kopii listu
-        seznam.getList();
-
+        allReservation.printReservation();
 
 
     }
